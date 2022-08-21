@@ -58,16 +58,16 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void updateStudent(StudentModel STUDENTModel,String newName,int newStatus){
         SQLiteDatabase db = this.getWritableDatabase();
-        String updateQuerey="UPDATE "+STUDENT_TABLE+" SET "+STUDENT_NAME+" = '"+newName+"' , "+STUDENT_ENROLL+" = '"+newStatus+"' WHERE "+STUDENT_ROLL+" = "+STUDENTModel.getRollNmber();
-        db.execSQL(updateQuerey);
+        String updateQ="UPDATE "+STUDENT_TABLE+" SET "+STUDENT_NAME+" = '"+newName+"' , "+STUDENT_ENROLL+" = '"+newStatus+"' WHERE "+STUDENT_ROLL+" = "+STUDENTModel.getRollNmber();
+        db.execSQL(updateQ);
         db.close();
     }
 
     public void removeStudent(StudentModel STUDENTModel){
         SQLiteDatabase db = this.getWritableDatabase();
-        String removeStudentQuery="DELETE FROM "+STUDENT_TABLE+" WHERE "+STUDENT_ROLL+" = "+STUDENTModel.getRollNmber();
-        Log.d("query test", "removeStudent: "+removeStudentQuery);
-        db.execSQL(removeStudentQuery);
+        String removeQuery="DELETE FROM "+STUDENT_TABLE+" WHERE "+STUDENT_ROLL+" = "+STUDENTModel.getRollNmber();
+        Log.d("query test", "removeStudent: "+removeQuery);
+        db.execSQL(removeQuery);
         db.close();
         //db.delete(STUDENT_TABLE)
     }
